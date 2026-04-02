@@ -7,7 +7,12 @@ mod packet;
 mod protocol;
 
 #[derive(Parser)]
-#[command(about = "Minecraft Server List Ping tool", long_about = None, disable_help_flag = true)]
+#[command(
+    version = concat!(env!("CARGO_PKG_VERSION"), " (Git: ", env!("MCPING_RUST_GIT_SHA"), " on ", env!("MCPING_RUST_GIT_BRANCH"), ")"),
+    about = "Minecraft Server List Ping tool",
+    long_about = None,
+    disable_help_flag = true
+)]
 struct MCPingArguments {
     #[arg(short, long = "help", action = ArgAction::Help, help = "Print this help information")]
     _help: Option<bool>,
