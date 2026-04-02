@@ -105,7 +105,10 @@ pub const MINECRAFT_1_21_9: ProtocolNum = 773;
 pub const MINECRAFT_1_21_10: ProtocolNum = 773;
 pub const MINECRAFT_1_21_11: ProtocolNum = 774;
 
-pub const LATEST: ProtocolNum = MINECRAFT_1_21_11;
+pub const MINECRAFT_26_1: ProtocolNum = 775;
+pub const MINECRAFT_26_1_1: ProtocolNum = 775;
+
+pub const LATEST: ProtocolNum = MINECRAFT_26_1_1;
 
 static VERSION_TO_PROTONUM: Lazy<HashMap<&str, ProtocolNum>> = Lazy::new(|| {
     let mut m = HashMap::new();
@@ -206,6 +209,9 @@ static VERSION_TO_PROTONUM: Lazy<HashMap<&str, ProtocolNum>> = Lazy::new(|| {
     m.insert("1.21.10", MINECRAFT_1_21_10);
     m.insert("1.21.11", MINECRAFT_1_21_11);
 
+    m.insert("26.1", MINECRAFT_26_1);
+    m.insert("26.1.1", MINECRAFT_26_1_1);
+
     m
 });
 
@@ -266,5 +272,6 @@ pub fn is_known_protocol_number(n: ProtocolNum) -> bool {
             | MINECRAFT_1_21_8
             | MINECRAFT_1_21_10
             | MINECRAFT_1_21_11
+            | MINECRAFT_26_1_1
     )
 }

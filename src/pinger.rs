@@ -105,8 +105,7 @@ fn read_varint(stream: &mut TcpStream) -> Result<usize, &'static str> {
             return Err("Malformed response, not a valid varint");
         }
         let buf = slice::from_mut(&mut byte);
-        #[allow(clippy::unused_io_amount)]
-        stream.read(buf).expect("The stream cannot be read");
+        stream.read_exact(buf).expect("The stream cannot be read");
         if buf.is_empty() {
             break;
         }
