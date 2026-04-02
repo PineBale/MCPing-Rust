@@ -1,0 +1,16 @@
+[package]
+name = "mcping"
+version = "0.1.0"
+authors = ["PineBale"]
+edition = "2021"
+rust-version = "1.89.0"
+readme = "README.md"
+license-file = "LICENSE"
+publish = false
+
+[dependencies]
+character_delight = { git = "https://github.com/PineBale/CharacterDelight-Rust.git", tag = "0.1.0" }
+hickory-resolver = "0.25.2"
+tokio = "1.50.0"
+clap = { version = "4.6.0", features = ["derive"] }
+once_cell = "1.21.4"
