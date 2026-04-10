@@ -86,5 +86,6 @@ fn test_protocol_numbers() {
     assert!(is_known_protocol_number(MINECRAFT_1_21_11));
     assert!(is_known_protocol_number(MINECRAFT_26_1));
     assert!(is_known_protocol_number(MINECRAFT_26_1_1));
+    assert!(is_known_protocol_number(MINECRAFT_26_1_2));
     assert!(!is_known_protocol_number(LATEST + 1));
 }
